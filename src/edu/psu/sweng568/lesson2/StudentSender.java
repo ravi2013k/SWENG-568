@@ -39,16 +39,13 @@ public class StudentSender {
 		System.out.println("Opening the output stream");
 		PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
-		// Step Three: We create a student object and send that data down the
-		// wire to the process listening on the other end.
+		// Step Three: We send some data down the wire
 		System.out.println("Dumping data to the socket");
 
-		Student student = new Student();
-		out.println(student.getStudentID());
-		out.println(student.getName());
-		out.println(student.getSocialSecurityNumber());
-		out.println(student.getEmailAddress());
-		out.println(student.getHomePhone());
+		out.println("Hello");
+		out.println("World");
+		out.println("Socket");
+		out.println("Example");
 
 		// Step 4: When we are done, we close the socket and writer
 		System.out.println("Closing the socket and shutting down");
