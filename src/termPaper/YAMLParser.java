@@ -10,15 +10,15 @@ import org.yaml.snakeyaml.Yaml;
 public class YAMLParser {
 
 	public static void main(String[] args) throws IOException {
-		URL exampleFile = JSONParser.class.getResource("example.json");
+		URL exampleFile = JSONParser.class.getResource("example.yaml");
 		Yaml yaml = new Yaml();
 
 		Map root = (Map) yaml.load(exampleFile.openStream());
 		Map billTo = (Map) root.get("bill-to");
 
 		int invoiceNumber = (Integer) root.get("invoice");
-		String lname = (String) billTo.get("lname");
-		String fname = (String) billTo.get("fname");
+		String lname = (String) billTo.get("given");
+		String fname = (String) billTo.get("family");
 		int uniqueItems = ((List) root.get("product")).size();
 		double total = (Double) root.get("total");
 
